@@ -10,7 +10,7 @@
         <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
         <!-- // Navbar -->
 
-        <div style="width: 40%; margin: 20px auto;">
+        <div style="width: 40%; height: 70%; margin: 20px auto;">
             <form method="post" action="login.php">
                 <h2>Login</h2>
                 <?php include(ROOT_PATH . '/includes/errors.php') ?>
