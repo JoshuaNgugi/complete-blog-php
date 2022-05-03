@@ -144,7 +144,7 @@ function getAllCourseLevels()
 function getTop5Courses() {
 	// use global $conn object in function
 	global $conn;
-	$sql = "SELECT * FROM courses ORDER BY created_at limit 5";
+	$sql = "SELECT * FROM courses WHERE course_level_id != 4 ORDER BY created_at limit 5";
 	$result = mysqli_query($conn, $sql);
 	// fetch all courses as an associative array called $posts
 	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -201,5 +201,25 @@ function getPublishedActivities() {
 	$result = mysqli_query($conn, $sql);
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $posts;
+}
+
+function getBootCamps() {
+	// use global $conn object in function
+	global $conn;
+	$sql = "SELECT * FROM courses WHERE course_level_id = 4 ORDER BY created_at limit 5";
+	$result = mysqli_query($conn, $sql);
+	// fetch all courses as an associative array called $posts
+	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	
+	return $courses;
+}
+
+function getBankDetails()
+{
+	global $conn;
+	$sql = "SELECT * FROM bank_account_details WHERE is_active=true";
+	$result = mysqli_query($conn, $sql);
+	$bank_details = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $bank_details;
 }
 ?>

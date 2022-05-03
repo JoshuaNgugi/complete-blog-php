@@ -4,7 +4,10 @@
 <?php require_once(ROOT_PATH . '/includes/public_functions.php') ?>
 <title>Academics</title>
 </head>
-<?php $courses = getTop5Courses(); ?>
+<?php 
+$courses = getTop5Courses();
+$boot_camps = getBootCamps(); 
+?>
 
 <body>
     <!-- navbar -->
@@ -63,44 +66,14 @@
                             <h2 class="sw-title">Boot Camps and Courses</h2>
                             <div class="news-list">
                                 <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="<?php echo BASE_URL . 'static/images/cisco.png'; ?>" alt="Cisco">
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Cisco Certified Network Associate (CCNA)</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Fibre Optic Training</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Summer School Visualization - Free registration</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Fundamentals of Software Testing, Third Cohort</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Fiber Optic Training</a>
-                                    </div>
+                                    <?php foreach ($boot_camps as $camp) : ?>
+                                        <div class="nl-img">
+                                            <img src="<?php echo BASE_URL . 'static/images/cisco.png'; ?>" alt="Cisco">
+                                        </div>
+                                        <div class="nl-title">
+                                            <a href="single_programme.php?course-slug=<?php echo $camp['slug']; ?>"><?php echo $camp['name']; ?></a>
+                                        </div>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </div>
