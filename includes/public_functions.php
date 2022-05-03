@@ -140,4 +140,15 @@ function getAllCourseLevels()
 	$course_levels = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $course_levels;
 }
+
+function getTop5Courses() {
+	// use global $conn object in function
+	global $conn;
+	$sql = "SELECT * FROM courses ORDER BY created_at limit 5";
+	$result = mysqli_query($conn, $sql);
+	// fetch all courses as an associative array called $posts
+	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	
+	return $courses;
+}
 ?>

@@ -1,8 +1,10 @@
 <?php include('config.php'); ?>
 <?php include('includes/registration_login.php'); ?>
 <?php include('includes/head_section.php'); ?>
+<?php require_once(ROOT_PATH . '/includes/public_functions.php') ?>
 <title>Academics</title>
 </head>
+<?php $courses = getTop5Courses(); ?>
 
 <body>
     <!-- navbar -->
@@ -70,7 +72,7 @@
                                 </div>
                                 <div class="nl-item">
                                     <div class="nl-img">
-                                    <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
+                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
                                     </div>
                                     <div class="nl-title">
                                         <a href="">Fibre Optic Training</a>
@@ -78,7 +80,7 @@
                                 </div>
                                 <div class="nl-item">
                                     <div class="nl-img">
-                                    <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
+                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
                                     </div>
                                     <div class="nl-title">
                                         <a href="">Summer School Visualization - Free registration</a>
@@ -86,7 +88,7 @@
                                 </div>
                                 <div class="nl-item">
                                     <div class="nl-img">
-                                    <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
+                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
                                     </div>
                                     <div class="nl-title">
                                         <a href="">Fundamentals of Software Testing, Third Cohort</a>
@@ -94,7 +96,7 @@
                                 </div>
                                 <div class="nl-item">
                                     <div class="nl-img">
-                                    <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
+                                        <img src="<?php echo BASE_URL . 'static/images/fibre-optic.jpg'; ?>" alt="Fibre optics">
                                     </div>
                                     <div class="nl-title">
                                         <a href="">Fiber Optic Training</a>
@@ -104,19 +106,15 @@
                         </div>
 
                         <div class="sidebar-widget">
-                                <h2 class="sw-title">Department of IT</h2>
-                                <div class="category">
-                                    <ul>
-                                        <li><a href="">Bsc Information Technology</a><span>(98)</span></li>
-                                        <li><a href="">International</a><span>(87)</span></li>
-                                        <li><a href="">Economics</a><span>(76)</span></li>
-                                        <li><a href="">Politics</a><span>(65)</span></li>
-                                        <li><a href="">Lifestyle</a><span>(54)</span></li>
-                                        <li><a href="">Technology</a><span>(43)</span></li>
-                                        <li><a href="">Trades</a><span>(32)</span></li>
-                                    </ul>
-                                </div>
+                            <h2 class="sw-title">Department of IT</h2>
+                            <div class="category">
+                                <ul>
+                                    <?php foreach ($courses as $course) : ?>
+                                        <li><a href="single_programme.php?course-slug=<?php echo $course['slug']; ?>"><?php echo $course['name']; ?></a></li>
+                                    <?php endforeach ?>
+                                </ul>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
