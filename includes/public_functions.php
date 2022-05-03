@@ -122,4 +122,13 @@ function getCourse($slug){
 	// }
 	return $post;
 }
+
+function getAllStaff()
+{
+	global $conn;
+	$sql = "SELECT * FROM users";
+	$result = mysqli_query($conn, $sql);
+	$staff = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $staff;
+}
 ?>

@@ -516,3 +516,40 @@ form input:focus {
     filter: blur(3px);
     -webkit-filter: blur(3px);
 }
+
+/**********************************/
+/*********** Staff **********/
+/**********************************/
+.staff-bar {
+	width: 100%;
+	float: center;
+	margin-left: 5px;
+	min-height: 400px;
+}
+.staff-bar .card {
+	width: 100%;
+	margin: 10px auto;
+	border: 1px solid #e4e1e1;
+	border-radius: 10px 10px 0px 0px;
+}
+.staff-bar .card .card-header {
+	padding: 10px;
+	text-align: center;
+	border-radius: 3px 3px 0px 0px;
+	background: #3E606F;
+}
+.staff-bar .card .card-header h2 {
+	color: white;
+}
+.staff-bar .card .card-content a {
+	display: block;
+	box-sizing: border-box;
+	padding: 8px 10px;
+	border-bottom: 1px solid #e4e1e1;
+	color: #444;
+}
+.staff-bar .card .card-content a:hover {
+	padding-left: 20px;
+	background: #F9F9F9;
+	transition: 0.1s;
+}
