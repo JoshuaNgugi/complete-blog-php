@@ -13,11 +13,9 @@ if (isset($_GET['course-id'])) {
 </head>
 
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
-        <!-- // Navbar -->
 
+    <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
+    <div class="container">
         <div style="width: 40%; margin: 20px auto;">
             <form method="post" action="register.php">
                 <h2>Apply Course</h2>

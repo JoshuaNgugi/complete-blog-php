@@ -153,40 +153,6 @@ $boot_camps = getBootCamps();
     </div>
     <!-- Footer End -->
 
-    <!-- Footer Menu Start -->
-    <div class="footer-menu">
-        <div class="container">
-            <div class="f-menu">
-                <a href="">Terms of use</a>
-                <a href="">Privacy policy</a>
-                <a href="">Cookies</a>
-                <a href="">Accessibility help</a>
-                <a href="">Advertise with us</a>
-                <a href="">Contact us</a>
-            </div>
-        </div>
-    </div>
-    <!-- Footer Menu End -->
-
-    <!-- Footer Bottom Start -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 copyright">
-                    <p>Copyright &copy; <a href="">The JKUAT Reporter</a>. All Rights Reserved</p>
-                </div>
-
-                <div class="col-md-6 template-by">
-                    <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer Bottom End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
 </body>
 
 </html>

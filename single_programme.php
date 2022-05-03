@@ -10,10 +10,9 @@ $course_levels = getAllCourseLevels();
 </head>
 
 <body>
+
+    <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
     <div class="container">
-        <!-- Navbar -->
-        <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
-        <!-- // Navbar -->
 
         <div class="content">
             <!-- Page wrapper -->

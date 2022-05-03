@@ -14,11 +14,8 @@ $courses = getAllProgrammes();
     <!-- // navbar -->
 
     <div class="staff-bar">
-        <div class="card">
-            <div class="card-header">
-                <h2>Programmes</h2>
-            </div>
-            <table class="table table-hover">
+        <h2>Programmes</h2>
+            <table class="table table-hover table-striped">
                 <tr>
                     <th scope="col">Name</th>
                 </tr>
@@ -32,7 +29,6 @@ $courses = getAllProgrammes();
                     </tr>
                 <?php endforeach ?>
             </table>
-        </div>
     </div>
 
     <?php include(ROOT_PATH . '/includes/footer.php') ?>

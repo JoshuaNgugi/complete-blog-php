@@ -9,32 +9,26 @@ $bank_details = getBankDetails();
 ?>
 
 <body>
-    <!-- navbar -->
     <?php include(ROOT_PATH . '/includes/navbar.php') ?>
-    <!-- // navbar -->
 
     <div class="staff-bar">
-        <div class="card">
-            <div class="card-header">
-                <h2>Bank Account Details</h2>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th scope="col">Bank</th>
-                    <th scope="col">Account Number</th>
+        <h2>Bank Account Details</h2>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th scope="col">Bank</th>
+                <th scope="col">Account Number</th>
+            </tr>
+            <?php foreach ($bank_details as $bank) : ?>
+                <tr class="card-content">
+                    <td>
+                        <?php echo $bank['bank'] ?>
+                    </td>
+                    <td>
+                        <?php echo $bank['account_number'] ?>
+                    </td>
                 </tr>
-                <?php foreach ($bank_details as $bank) : ?>
-                    <tr class="card-content">
-                        <td>
-                            <?php echo $bank['bank'] ?>
-                        </td>
-                        <td>
-                            <?php echo $bank['account_number'] ?>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
-            </table>
-        </div>
+            <?php endforeach ?>
+        </table>
     </div>
 
     <?php include(ROOT_PATH . '/includes/footer.php') ?>
