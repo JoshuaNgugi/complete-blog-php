@@ -14,6 +14,8 @@
         <li><a href="academics.php">Academics</a></li>
         <li><a href="programmes.php">Programmes</a></li>
         <li><a href="staff.php">Staff</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
     </ul>
 </div>
 <!-- // navbar -->

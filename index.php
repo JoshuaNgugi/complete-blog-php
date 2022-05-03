@@ -5,7 +5,7 @@
 
 <!-- Retrieve all posts from database  -->
 <?php
-$posts = getPublishedPosts();
+$activites = getPublishedActivities();
 $directors_message = getDirectorsMessage();
 ?>
 
@@ -20,30 +20,26 @@ $directors_message = getDirectorsMessage();
 		<?php include(ROOT_PATH . '/includes/navbar.php') ?>
 		<!-- // navbar -->
 
-		<!-- banner -->
-		<?php include(ROOT_PATH . '/includes/banner.php') ?>
-		<!-- // banner -->
-
 		<!-- Page content -->
 
 		<div class="content">
-			<h2 class="content-title">Recent Articles</h2>
+			<h2 class="content-title">Current Activites</h2>
 			<hr>
-			<?php foreach ($posts as $post) : ?>
+			<?php foreach ($activites as $activity) : ?>
 				<div class="post" style="margin-left: 0px;">
-					<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="">
+					<img src="<?php echo BASE_URL . '/static/images/' . $activity['image']; ?>" class="post_image" alt="">
 
-					<?php if (isset($post['topic']['name'])) : ?>
-						<a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $post['topic']['id'] ?>" class="btn category">
-							<?php echo $post['topic']['name'] ?>
+					<?php if (isset($activity['topic']['name'])) : ?>
+						<a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $activity['topic']['id'] ?>" class="btn category">
+							<?php echo $activity['topic']['name'] ?>
 						</a>
 					<?php endif ?>
 
-					<a href="single_post.php?post-slug=<?php echo $post['slug']; ?>">
+					<a href="single_post.php?post-slug=<?php echo $activity['slug']; ?>">
 						<div class="post_info">
-							<h3><?php echo $post['title'] ?></h3>
+							<h3><?php echo $activity['title'] ?></h3>
 							<div class="info">
-								<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
+								<span><?php echo date("F j, Y ", strtotime($activity["created_at"])); ?></span>
 								<span class="read_more">Read more...</span>
 							</div>
 						</div>

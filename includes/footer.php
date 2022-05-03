@@ -1,7 +1,4 @@
 <!-- Footer Start -->
-<div>
-    
-</div>
 <div class="footer">
         <div class="footer-container">
             <div class="row">

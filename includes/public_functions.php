@@ -194,4 +194,12 @@ function getDirectorsMessage() {
 	
 	return $courses;
 }
+
+function getPublishedActivities() {
+	global $conn;
+	$sql = "SELECT * FROM current_activities WHERE is_published=true";
+	$result = mysqli_query($conn, $sql);
+	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $posts;
+}
 ?>
