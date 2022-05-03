@@ -90,4 +90,36 @@ function getAllTopics()
 	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $topics;
 }
+
+function getAllCourses() {
+	// use global $conn object in function
+	global $conn;
+	$sql = "SELECT * FROM courses";
+	$result = mysqli_query($conn, $sql);
+	// fetch all courses as an associative array called $posts
+	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	$final_courses = array();
+	foreach ($courses as $course) {
+		$post['name'] = getPostTopic($course['id']); 
+		array_push($final_courses, $post);
+	}
+	return $courses;
+}
+
+function getCourse($slug){
+	global $conn;
+	// Get single post slug
+	$course_slug = $_GET['course-slug'];
+	$sql = "SELECT * FROM courses WHERE slug='$course_slug'";
+	$result = mysqli_query($conn, $sql);
+
+	// fetch query results as associative array.
+	$post = mysqli_fetch_assoc($result);
+	// if ($post) {
+	// 	// get the topic to which this post belongs
+	// 	$post['topic'] = getPostTopic($post['id']);
+	// }
+	return $post;
+}
 ?>

@@ -12,7 +12,7 @@
     <ul>
         <li><a class="active" href="index.php">Home</a></li>
         <li><a href="academics.php">Academics</a></li>
-        <li><a href="#contact">Programmes</a></li>
+        <li><a href="programmes.php">Programmes</a></li>
         <li><a href="staff.php">Staff</a></li>
     </ul>
 </div>
