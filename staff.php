@@ -28,7 +28,7 @@ $staff = getAllStaff();
                         </tr>
                         <?php foreach ($staff as $staffmember) : ?>
                             <tr class="card-content">
-                                <td><?php echo $staffmember['username'] ?></td>
+                                <td><?php echo $staffmember['first_name']. ' '.$staffmember['last_name'] ?></td>
                                 <td><?php echo $staffmember['role'] ?></td>
                             </tr>
                         <?php endforeach ?>

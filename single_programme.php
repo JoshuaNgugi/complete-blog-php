@@ -4,7 +4,7 @@
 if (isset($_GET['course-slug'])) {
     $course = getCourse($_GET['course-slug']);
 }
-$topics = getAllTopics();
+$course_levels = getAllCourseLevels();
 ?>
 <?php include('includes/head_section.php'); ?>
 <title> <?php echo $course['name'] ?> | JKUAT SCIT</title>
@@ -39,12 +39,12 @@ $topics = getAllTopics();
             <div class="post-sidebar">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Topics</h2>
+                        <h2>Level</h2>
                     </div>
                     <div class="card-content">
-                        <?php foreach ($topics as $topic) : ?>
+                        <?php foreach ($course_levels as $course) : ?>
                             <a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $topic['id'] ?>">
-                                <?php echo $topic['name']; ?>
+                                <?php echo $course['name']; ?>
                             </a>
                         <?php endforeach ?>
                     </div>

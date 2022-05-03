@@ -126,9 +126,18 @@ function getCourse($slug){
 function getAllStaff()
 {
 	global $conn;
-	$sql = "SELECT * FROM users";
+	$sql = "SELECT * FROM staff";
 	$result = mysqli_query($conn, $sql);
 	$staff = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $staff;
+}
+
+function getAllCourseLevels()
+{
+	global $conn;
+	$sql = "SELECT * FROM course_level";
+	$result = mysqli_query($conn, $sql);
+	$course_levels = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $course_levels;
 }
 ?>
