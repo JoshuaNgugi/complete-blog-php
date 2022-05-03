@@ -4,7 +4,10 @@
 <?php require_once(ROOT_PATH . '/includes/registration_login.php') ?>
 
 <!-- Retrieve all posts from database  -->
-<?php $posts = getPublishedPosts(); ?>
+<?php
+$posts = getPublishedPosts();
+$directors_message = getDirectorsMessage();
+?>
 
 <?php require_once(ROOT_PATH . '/includes/head_section.php') ?>
 <title>LifeBlog | Home </title>
@@ -49,6 +52,25 @@
 			<?php endforeach ?>
 			<!-- more content still to come here ... -->
 		</div>
+		<!-- Single News Start-->
+		<div class="single-news">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="sn-container">
+							<div class="sn-content">
+								<h1 class="sn-title">Director's Message</h1>
+								<h3><?php echo $directors_message['title'] ?></h3>
+								<p>
+									<?php echo $directors_message['message'] ?>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Single News End-->
 		<!-- // Page content -->
 	</div>
 	<!-- // container -->

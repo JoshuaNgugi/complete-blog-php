@@ -182,4 +182,16 @@ function getCourseLevelTitleById($id)
 	$courses = mysqli_fetch_assoc($result);
 	return $courses['name'];
 }
+
+function getDirectorsMessage() {
+	global $conn;
+	$sql = "SELECT * FROM director_messages WHERE is_published = true ORDER BY created_at DESC limit 1";
+
+	$result = mysqli_query($conn, $sql);
+
+	// fetch query results as associative array.
+	$courses = mysqli_fetch_assoc($result);
+	
+	return $courses;
+}
 ?>
