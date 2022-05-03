@@ -86,11 +86,11 @@ form input:focus {
 	display: inline;
 }
 .navbar .logo_div h1 {
-	color: #B9E6F2;
+	color: white;
 	font-size: 3em;
 	letter-spacing: 5px;
 	font-weight: 100;
-	font-family: 'Tangerine', cursive;
+	font-family: 'Noto Serif', serif;
 }
 
 .logo_div {

@@ -102,6 +102,21 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="sidebar-widget">
+                                <h2 class="sw-title">Department of IT</h2>
+                                <div class="category">
+                                    <ul>
+                                        <li><a href="">Bsc Information Technology</a><span>(98)</span></li>
+                                        <li><a href="">International</a><span>(87)</span></li>
+                                        <li><a href="">Economics</a><span>(76)</span></li>
+                                        <li><a href="">Politics</a><span>(65)</span></li>
+                                        <li><a href="">Lifestyle</a><span>(54)</span></li>
+                                        <li><a href="">Technology</a><span>(43)</span></li>
+                                        <li><a href="">Trades</a><span>(32)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
