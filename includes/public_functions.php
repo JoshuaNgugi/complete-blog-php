@@ -151,4 +151,35 @@ function getTop5Courses() {
 	
 	return $courses;
 }
+
+/* * * * * * * * * * * * * * * *
+* Returns all posts under a topic
+* * * * * * * * * * * * * * * * */
+function getCoursesByCourseLevel($course_level_id) {
+	global $conn;
+	$sql = "SELECT * FROM courses cs 
+			WHERE cs.id IN 
+			(SELECT cd.course_id FROM course_details cd 
+				WHERE cd.course_level_id=$course_level_id GROUP BY cd.course_level_id
+				HAVING COUNT(1) = 1)";
+	$result = mysqli_query($conn, $sql);
+	// fetch all posts as an associative array called $posts
+	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	$final_posts = array();
+	foreach ($posts as $post) {
+		$post['topic'] = getPostTopic($post['id']); 
+		array_push($final_posts, $post);
+	}
+	return $final_posts;
+}
+
+function getCourseLevelTitleById($id)
+{
+	global $conn;
+	$sql = "SELECT name FROM course_level WHERE id=$id";
+	$result = mysqli_query($conn, $sql);
+	$courses = mysqli_fetch_assoc($result);
+	return $courses['name'];
+}
 ?>

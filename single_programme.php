@@ -42,9 +42,9 @@ $course_levels = getAllCourseLevels();
                         <h2>Level</h2>
                     </div>
                     <div class="card-content">
-                        <?php foreach ($course_levels as $course) : ?>
-                            <a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $topic['id'] ?>">
-                                <?php echo $course['name']; ?>
+                        <?php foreach ($course_levels as $course_level) : ?>
+                            <a href="<?php echo BASE_URL . 'filtered_courses.php?course_level_id=' . $course_level['id'] ?>">
+                                <?php echo $course_level['name']; ?>
                             </a>
                         <?php endforeach ?>
                     </div>
