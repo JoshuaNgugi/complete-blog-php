@@ -3,7 +3,6 @@
 <?php include('includes/registration_login.php'); ?>
 <?php include('includes/head_section.php'); ?>
 
-<title>Academics</title>
 </head>
 <?php
 $bank_details = getBankDetails();

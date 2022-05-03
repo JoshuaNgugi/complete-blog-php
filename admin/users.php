@@ -6,7 +6,6 @@ $admins = getAdminUsers();
 $roles = ['Admin', 'Author'];
 ?>
 <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
-<title>Admin | Manage users</title>
 </head>
 
 <body>

@@ -5,7 +5,6 @@
 
 <!-- Get all admin posts from DB -->
 <?php $posts = getAllPosts(); ?>
-	<title>Admin | Manage Posts</title>
 </head>
 <body>
 	<!-- admin navbar -->

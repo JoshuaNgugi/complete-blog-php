@@ -10,7 +10,6 @@ $directors_message = getDirectorsMessage();
 ?>
 
 <?php require_once(ROOT_PATH . '/includes/head_section.php') ?>
-<title>LifeBlog | Home </title>
 </head>
 
 <body>

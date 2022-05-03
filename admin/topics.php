@@ -3,7 +3,6 @@
 <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 <!-- Get all topics from DB -->
 <?php $topics = getAllTopics();    ?>
-<title>Admin | Manage Topics</title>
 </head>
 
 <body>

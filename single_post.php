@@ -7,7 +7,6 @@ if (isset($_GET['post-slug'])) {
 $topics = getAllTopics();
 ?>
 <?php include('includes/head_section.php'); ?>
-<title> <?php echo $post['title'] ?> | LifeBlog</title>
 </head>
 
 <body>

@@ -91,10 +91,10 @@ function getAllTopics()
 	return $topics;
 }
 
-function getAllCourses() {
+function getAllProgrammes() {
 	// use global $conn object in function
 	global $conn;
-	$sql = "SELECT * FROM courses";
+	$sql = "SELECT * FROM courses WHERE course_level_id != 4";
 	$result = mysqli_query($conn, $sql);
 	// fetch all courses as an associative array called $posts
 	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -107,7 +107,7 @@ function getAllCourses() {
 	return $courses;
 }
 
-function getCourse($slug){
+function getCourseBySlug($slug){
 	global $conn;
 	// Get single post slug
 	$course_slug = $_GET['course-slug'];
@@ -120,6 +120,17 @@ function getCourse($slug){
 	// 	// get the topic to which this post belongs
 	// 	$post['topic'] = getPostTopic($post['id']);
 	// }
+	return $post;
+}
+
+function getCourseById($id){
+	global $conn;
+	$course_id = $_GET['course-id'];
+	$sql = "SELECT * FROM courses WHERE id=$course_id";
+	$result = mysqli_query($conn, $sql);
+
+	// fetch query results as associative array.
+	$post = mysqli_fetch_assoc($result);
 	return $post;
 }
 

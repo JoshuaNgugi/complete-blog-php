@@ -4,7 +4,6 @@
 
 <?php include('includes/head_section.php'); ?>
 
-<title>LifeBlog | Sign up </title>
 </head>
 
 <body>

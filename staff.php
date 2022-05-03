@@ -4,7 +4,6 @@
 $staff = getAllStaff();
 ?>
 <?php include('includes/head_section.php'); ?>
-<title>JKUAT SCIT Staff</title>
 </head>
 
 <body>

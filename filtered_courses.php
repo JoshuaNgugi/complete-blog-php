@@ -8,7 +8,6 @@ if (isset($_GET['course_level_id'])) {
     $courses = getCoursesByCourseLevel($course_level_id);
 }
 ?>
-<title>Course | Home </title>
 </head>
 
 <body>

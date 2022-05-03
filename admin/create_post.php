@@ -4,7 +4,6 @@
 <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 <!-- Get all topics -->
 <?php $topics = getAllTopics();	?>
-	<title>Admin | Create Post</title>
 </head>
 <body>
 	<!-- admin navbar -->

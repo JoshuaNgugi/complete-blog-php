@@ -2,7 +2,7 @@
 <div class="navbar">
 
     <div class="logo_div">
-        <img src="<?php echo BASE_URL . 'static/images/jkuat-x.png'; ?>" alt="Jkuat logo" width="50" height="50">
+        <img src="<?php echo BASE_URL . 'static/images/jkuat-logo.png'; ?>" alt="Jkuat logo" width="50" height="50">
     </div>
     <div class="logo_div">
         <a href="index.php">

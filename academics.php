@@ -2,7 +2,6 @@
 <?php include('includes/registration_login.php'); ?>
 <?php include('includes/head_section.php'); ?>
 <?php require_once(ROOT_PATH . '/includes/public_functions.php') ?>
-<title>Academics</title>
 </head>
 <?php 
 $courses = getTop5Courses();

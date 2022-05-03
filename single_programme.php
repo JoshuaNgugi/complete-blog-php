@@ -2,12 +2,11 @@
 <?php include('includes/public_functions.php'); ?>
 <?php
 if (isset($_GET['course-slug'])) {
-    $course = getCourse($_GET['course-slug']);
+    $course = getCourseBySlug($_GET['course-slug']);
 }
 $course_levels = getAllCourseLevels();
 ?>
 <?php include('includes/head_section.php'); ?>
-<title> <?php echo $course['name'] ?> | JKUAT SCIT</title>
 </head>
 
 <body>
@@ -22,10 +21,10 @@ $course_levels = getAllCourseLevels();
                 <!-- full post div -->
                 <div class="full-post-div">
                     <?php ?>
-                        <h2 class="post-title"><?php echo $course['name']; ?></h2>
-                        <div class="post-body-div">
-                            <?php echo html_entity_decode($course['description']); ?>
-                        </div>
+                    <h2 class="post-title"><?php echo $course['name']; ?></h2>
+                    <div class="post-body-div">
+                        <?php echo html_entity_decode($course['description']); ?>
+                    </div>
                     <?php ?>
                 </div>
                 <!-- // full post div -->
@@ -51,6 +50,9 @@ $course_levels = getAllCourseLevels();
                 </div>
             </div>
             <!-- // post sidebar -->
+            <p>
+                <a href="apply.php?course-id=<?php echo $course['id']; ?>" class="btn btn-danger ml-3">Apply Now</a>
+            </p>
         </div>
     </div>
     <!-- // content -->
