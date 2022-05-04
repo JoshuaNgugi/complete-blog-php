@@ -13,7 +13,6 @@ $course_levels = getAllCourseLevels();
 
     <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
     <div class="container">
-
         <div class="content">
             <!-- Page wrapper -->
             <div class="post-wrapper">

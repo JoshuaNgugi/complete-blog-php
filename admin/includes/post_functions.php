@@ -82,6 +82,20 @@ if (isset($_GET['edit-course'])) {
     editCourse($course_id);
 }
 
+if (isset($_POST['create_activity'])) {
+    createActivity($_POST);
+}
+
+if (isset($_GET['edit-activity'])) {
+    $isEditingPost = true;
+    $activity_id = $_GET['edit-activity'];
+    editActivity($activity_id);
+}
+
+if (isset($_POST['update_activity'])) {
+    updateActivity($_POST);
+}
+
 /* - - - - - - - - - - 
 -  Post functions
 - - - - - - - - - - -*/
@@ -316,3 +330,105 @@ function editCourse($course_id)
     $title = $course['name'];
     $body = $course['description'];
 }
+
+function editActivity($activity_id)
+{
+    global $conn, $title, $post_slug, $body, $published, $isEditingPost, $post_id;
+    $sql = "SELECT * FROM current_activities WHERE id=$activity_id LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+    $acitivity = mysqli_fetch_assoc($result);
+    // set form values on the form to be updated
+    $title = $acitivity['title'];
+    $body = $acitivity['body'];
+}
+
+function createActivity($request_values)
+{
+    global $conn, $errors, $title, $featured_image, $body, $published;
+    $title = esc($request_values['title']);
+    $body = htmlentities(esc($request_values['body']));
+    if (isset($request_values['publish'])) {
+        $published = esc($request_values['publish']);
+    }
+    // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+    $post_slug = makeSlug($title);
+    // validate form
+    if (empty($title)) {
+        array_push($errors, "Activity title is required");
+    }
+    if (empty($body)) {
+        array_push($errors, "Activity body is required");
+    }
+    // Get image name
+    $featured_image = $_FILES['featured_image']['name'];
+    if (empty($featured_image)) {
+        array_push($errors, "Featured image is required");
+    }
+    // image file directory
+    $target = "../static/images/" . basename($featured_image);
+    if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
+        array_push($errors, "Failed to upload image. Please check file settings for your server");
+    }
+    // Ensure that no post is saved twice. 
+    $post_check_query = "SELECT * FROM current_activities WHERE slug='$post_slug' LIMIT 1";
+    $result = mysqli_query($conn, $post_check_query);
+
+    if (mysqli_num_rows($result) > 0) { // if post exists
+        array_push($errors, "An activity already exists with that title.");
+    }
+    // create post if there are no errors in the form
+    if (count($errors) == 0) {
+        $query = "INSERT INTO current_activities (staff_id, title, slug, image, body, is_published) VALUES(1, '$title', '$post_slug', '$featured_image', '$body', $published)";
+        if (mysqli_query($conn, $query)) { // if post created successfully
+
+            $_SESSION['message'] = "Activity created successfully";
+            header('location: activities.php');
+            exit(0);
+        }
+    }
+}
+
+function updateActivity($request_values)
+{
+    global $conn, $errors, $post_id, $title, $featured_image, $body, $published;
+
+    $title = esc($request_values['title']);
+    $body = esc($request_values['body']);
+    $post_id = esc($request_values['activity_id']);
+    // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+    $post_slug = makeSlug($title);
+
+    if (empty($title)) {
+        array_push($errors, "Activity title is required");
+    }
+    if (empty($body)) {
+        array_push($errors, "Activity body is required");
+    }
+    // if new featured image has been provided
+    if (isset($_POST['featured_image'])) {
+        // Get image name
+        $featured_image = $_FILES['featured_image']['name'];
+        // image file directory
+        $target = "../static/images/" . basename($featured_image);
+        if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
+            array_push($errors, "Failed to upload image. Please check file settings for your server");
+        }
+    }
+
+    // register topic if there are no errors in the form
+    if (count($errors) == 0) {
+        $query = "UPDATE current_activities SET title='$title', slug='$post_slug', image='$featured_image', body='$body', is_published=$published, updated_at=now() WHERE id=$post_id";
+        // attach topic to post on post_topic table
+        if (mysqli_query($conn, $query)) { // if post created successfully
+            if (isset($topic_id)) {
+                $_SESSION['message'] = "Activity created successfully";
+                header('location: activities.php');
+                exit(0);
+            }
+        }
+        $_SESSION['message'] = "Activity updated successfully";
+        header('location: activities.php');
+        exit(0);
+    }
+}
+

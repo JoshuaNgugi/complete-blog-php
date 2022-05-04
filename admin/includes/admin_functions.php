@@ -297,3 +297,11 @@ function getAllCourseLevels() {
 	$levels = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $levels;
 }
+
+function getAllActivities() {
+	global $conn;
+	$sql = "SELECT * FROM current_activities";
+	$result = mysqli_query($conn, $sql);
+	$activities = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $activities;
+}
