@@ -20,6 +20,7 @@ $directors_message = getDirectorsMessage();
 
 	<!-- container - wraps whole page -->
 	<div class="container">
+
 		<div class="content">
 			<h2 class="content-title">Current Activites</h2>
 			<hr>
@@ -33,7 +34,7 @@ $directors_message = getDirectorsMessage();
 						</a>
 					<?php endif ?>
 
-					<a href="single_post.php?post-slug=<?php echo $activity['slug']; ?>">
+					<a href="single_programme.php?course-slug=<?php echo $activity['slug']; ?>">
 						<div class="post_info">
 							<h3><?php echo $activity['title'] ?></h3>
 							<div class="info">

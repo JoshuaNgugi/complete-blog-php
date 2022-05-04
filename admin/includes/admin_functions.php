@@ -281,3 +281,19 @@ function deleteTopic($topic_id) {
 		exit(0);
 	}
 }
+
+function getAllDirectors() {
+	global $conn;
+	$sql = "SELECT * FROM staff WHERE role LIKE 'Director'";
+	$result = mysqli_query($conn, $sql);
+	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $topics;
+}
+
+function getAllCourseLevels() {
+	global $conn;
+	$sql = "SELECT * FROM course_level";
+	$result = mysqli_query($conn, $sql);
+	$levels = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $levels;
+}

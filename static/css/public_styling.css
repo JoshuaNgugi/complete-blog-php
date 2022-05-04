@@ -6,7 +6,7 @@
 html { height: 100%; box-sizing: border-box; }
 body {
     color: #000000;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Averia Serif Libre', cursive;
     font-weight: 400;
     background: #ffffff;
 }
@@ -82,7 +82,6 @@ form input:focus {
 .navbar .logo_div {
 	float: left; 
 	padding-top: 5px;
-	padding-left: 40px;
 	display: inline;
 }
 .navbar .logo_div h1 {

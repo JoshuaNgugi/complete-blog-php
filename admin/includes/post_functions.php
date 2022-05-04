@@ -71,6 +71,10 @@ if (isset($_GET['delete-post'])) {
     $post_id = $_GET['delete-post'];
     deletePost($post_id);
 }
+// if user clicks the create post button
+if (isset($_POST['create_course'])) {
+    createCourse($_POST);
+}
 
 /* - - - - - - - - - - 
 -  Post functions
@@ -232,5 +236,66 @@ function togglePublishPost($post_id, $message)
         $_SESSION['message'] = $message;
         header("location: posts.php");
         exit(0);
+    }
+}
+
+// get all posts from DB
+function getAllCourses()
+{
+    global $conn;
+
+    $sql = "SELECT * FROM courses";
+    $result = mysqli_query($conn, $sql);
+    $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $posts;
+}
+
+function createCourse($request_values)
+{
+    global $conn, $errors, $title, $director_id, $course_level_id, $body;
+    $title = esc($request_values['title']);
+    $body = htmlentities(esc($request_values['body']));
+    if (isset($request_values['director_id'])) {
+        $director_id = esc($request_values['director_id']);
+    }
+    if (isset($request_values['course_level_id'])) {
+        $course_level_id = esc($request_values['course_level_id']);
+    }
+    // validate form
+    if (empty($title)) {
+        array_push($errors, "Course title is required");
+    }
+    if (empty($body)) {
+        array_push($errors, "Course description is required");
+    }
+    if (empty($director_id)) {
+        array_push($errors, "Course Director is required");
+    }
+
+    if (empty($course_level_id)) {
+        array_push($errors, "Course Level is required");
+    }
+
+    // Ensure that no post is saved twice. 
+    $post_check_query = "SELECT * FROM courses WHERE name='$title' LIMIT 1";
+    $result = mysqli_query($conn, $post_check_query);
+
+    if (mysqli_num_rows($result) > 0) { // if post exists
+        array_push($errors, "A course already exists with that title.");
+    }
+    // create post if there are no errors in the form
+    if (count($errors) == 0) {
+        $query = "INSERT INTO courses (name, description, user_id, course_level_id) VALUES('$title', '$body', $director_id, $course_level_id)";
+        if (mysqli_query($conn, $query)) { // if post created successfully
+            $inserted_course_id = mysqli_insert_id($conn);
+            // create relationship between post and topic
+            $sql = "INSERT INTO course_details (course_id, course_level_id) VALUES($inserted_course_id, $course_level_id)";
+            mysqli_query($conn, $sql);
+
+            $_SESSION['message'] = "Course created successfully";
+            header('location: course.php');
+            exit(0);
+        }
     }
 }
