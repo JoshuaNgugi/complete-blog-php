@@ -3,9 +3,9 @@
 <?php include('includes/head_section.php'); ?>
 <?php require_once(ROOT_PATH . '/includes/public_functions.php') ?>
 </head>
-<?php 
+<?php
 $courses = getTop5Courses();
-$boot_camps = getBootCamps(); 
+$boot_camps = getBootCamps();
 ?>
 
 <body>
@@ -63,17 +63,12 @@ $boot_camps = getBootCamps();
                     <div class="sidebar">
                         <div class="sidebar-widget">
                             <h2 class="sw-title">Boot Camps and Courses</h2>
-                            <div class="news-list">
-                                <div class="nl-item">
+                            <div class="category">
+                                <ul>
                                     <?php foreach ($boot_camps as $camp) : ?>
-                                        <div class="nl-img">
-                                            <img src="<?php echo BASE_URL . 'static/images/cisco.png'; ?>" alt="Cisco">
-                                        </div>
-                                        <div class="nl-title">
-                                            <a href="single_programme.php?course-slug=<?php echo $camp['slug']; ?>"><?php echo $camp['name']; ?></a>
-                                        </div>
+                                        <li><a href="single_programme.php?course-slug=<?php echo $camp['slug']; ?>"><?php echo $camp['name']; ?></a></li>
                                     <?php endforeach ?>
-                                </div>
+                                </ul>
                             </div>
                         </div>
 
