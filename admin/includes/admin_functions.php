@@ -305,3 +305,11 @@ function getAllActivities() {
 	$activities = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $activities;
 }
+
+function getAllDirectorMessages() {
+	global $conn;
+	$sql = "SELECT * FROM director_messages";
+	$result = mysqli_query($conn, $sql);
+	$messages = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $messages;
+}

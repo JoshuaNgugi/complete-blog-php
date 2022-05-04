@@ -96,6 +96,10 @@ if (isset($_POST['update_activity'])) {
     updateActivity($_POST);
 }
 
+if (isset($_POST['create_message'])) {
+    createMessage($_POST);
+}
+
 /* - - - - - - - - - - 
 -  Post functions
 - - - - - - - - - - -*/
@@ -432,3 +436,34 @@ function updateActivity($request_values)
     }
 }
 
+function createMessage($request_values)
+{
+    global $conn, $errors, $title, $body;
+    $title = esc($request_values['title']);
+    $body = htmlentities(esc($request_values['body']));
+    // validate form
+    if (empty($title)) {
+        array_push($errors, "Message title is required");
+    }
+    if (empty($body)) {
+        array_push($errors, "Message description is required");
+    }
+
+    // Ensure that no post is saved twice. 
+    $post_check_query = "SELECT * FROM director_messages WHERE title='$title' LIMIT 1";
+    $result = mysqli_query($conn, $post_check_query);
+
+    if (mysqli_num_rows($result) > 0) { // if post exists
+        array_push($errors, "A message already exists with that title.");
+    }
+    // create post if there are no errors in the form
+    if (count($errors) == 0) {
+        $query = "INSERT INTO director_messages (title, message, director_id, is_published) VALUES('$title', '$body', 1, true)";
+        if (mysqli_query($conn, $query)) { // if post created successfully
+
+            $_SESSION['message'] = "Message created successfully";
+            header('location: messages.php');
+            exit(0);
+        }
+    }
+}
