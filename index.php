@@ -26,7 +26,7 @@ $directors_message = getDirectorsMessage();
 			<hr>
 			<?php foreach ($activites as $activity) : ?>
 				<div class="post" style="margin-left: 0px;">
-					<img src="<?php echo BASE_URL . '/static/images/' . $activity['image']; ?>" class="post_image" alt="">
+					<img src="<?php echo BASE_URL . 'static/images/' . $activity['image']; ?>" class="post_image" alt="">
 
 					<?php if (isset($activity['topic']['name'])) : ?>
 						<a href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $activity['topic']['id'] ?>" class="btn category">
