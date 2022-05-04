@@ -27,6 +27,7 @@
 						<th>#</th>
 						<th>Name</th>
 						<th>Created On</th>
+                        <th>Edit</th>
 					</thead>
 					<tbody>
 					<?php foreach ($courses as $key => $course): ?>
@@ -34,6 +35,11 @@
 							<td><?php echo $key + 1; ?></td>
 							<td><?php echo $course['name']; ?></td>
 							<td><?php echo $course['created_at']; ?></td>
+                            <td>
+								<a class="fa fa-pencil btn edit"
+									href="create_course.php?edit-course=<?php echo $course['id'] ?>">
+								</a>
+							</td>
 						</tr>
 					<?php endforeach ?>
 					</tbody>

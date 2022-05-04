@@ -25,7 +25,7 @@ $levels = getAllCourseLevels();
 
 				<!-- if editing post, the id is required to identify that post -->
 				<?php if ($isEditingPost === true): ?>
-					<input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
+					<input type="hidden" name="course_id" value="<?php echo $course_id; ?>">
 				<?php endif ?>
 
 				<input type="text" name="title" value="<?php echo $title; ?>" placeholder="Title">

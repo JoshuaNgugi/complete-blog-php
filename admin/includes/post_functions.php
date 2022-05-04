@@ -76,6 +76,12 @@ if (isset($_POST['create_course'])) {
     createCourse($_POST);
 }
 
+if (isset($_GET['edit-course'])) {
+    $isEditingPost = true;
+    $course_id = $_GET['edit-course'];
+    editCourse($course_id);
+}
+
 /* - - - - - - - - - - 
 -  Post functions
 - - - - - - - - - - -*/
@@ -298,4 +304,15 @@ function createCourse($request_values)
             exit(0);
         }
     }
+}
+
+function editCourse($course_id)
+{
+    global $conn, $title, $post_slug, $body, $published, $isEditingPost, $post_id;
+    $sql = "SELECT * FROM courses WHERE id=$course_id LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+    $course = mysqli_fetch_assoc($result);
+    // set form values on the form to be updated
+    $title = $course['name'];
+    $body = $course['description'];
 }
