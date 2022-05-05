@@ -48,7 +48,7 @@ $directors_message = getDirectorsMessage();
 			<!-- more content still to come here ... -->
 
 		</div>
-		<div class="row">
+		<div class="row" style="font-family: 'Averia Serif Libre', cursive;">
 			<div class="col-lg-8">
 				<div class="sn-container">
 					<div class="sn-content">

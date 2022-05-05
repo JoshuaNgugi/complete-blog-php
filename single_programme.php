@@ -16,7 +16,6 @@ $course_levels = getAllCourseLevels();
         <div class="content">
             <!-- Page wrapper -->
             <div class="post-wrapper">
-                <!-- full post div -->
                 <div class="full-post-div">
                     <?php ?>
                     <h2 class="post-title"><?php echo $course['name']; ?></h2>
@@ -25,12 +24,10 @@ $course_levels = getAllCourseLevels();
                     </div>
                     <?php ?>
                 </div>
-                <!-- // full post div -->
-
-                <!-- comments section -->
-                <!--  coming soon ...  -->
+                <p>
+                    <a href="apply.php?course-id=<?php echo $course['id']; ?>" class="btn btn-danger ml-3">Apply Now</a>
+                </p>
             </div>
-            <!-- // Page wrapper -->
 
             <!-- post sidebar -->
             <div class="post-sidebar">
@@ -48,9 +45,6 @@ $course_levels = getAllCourseLevels();
                 </div>
             </div>
             <!-- // post sidebar -->
-            <p>
-                <a href="apply.php?course-id=<?php echo $course['id']; ?>" class="btn btn-danger ml-3">Apply Now</a>
-            </p>
         </div>
     </div>
     <!-- // content -->

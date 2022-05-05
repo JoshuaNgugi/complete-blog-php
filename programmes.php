@@ -13,7 +13,7 @@ $courses = getAllProgrammes();
     <?php include(ROOT_PATH . '/includes/navbar.php') ?>
     <!-- // navbar -->
 
-    <div class="staff-bar">
+    <div class="staff-bar" style="font-family: 'Averia Serif Libre', cursive;" >
         <h2>Programmes</h2>
             <table class="table table-hover table-striped">
                 <tr>

@@ -11,29 +11,32 @@ if (isset($_GET['course_level_id'])) {
 </head>
 
 <body>
+    <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
     <div class="container">
-        <!-- Navbar -->
-        <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
-        <!-- // Navbar -->
-        <!-- content -->
-        <div class="content">
+        <div class="content" style="font-family: 'Averia Serif Libre', cursive;">
             <h2 class="content-title">
                 <?php echo getCourseLevelTitleById($course_level_id); ?> Courses
             </h2>
             <hr>
-            <?php foreach ($courses as $post) : ?>
-                <div class="post" style="margin-left: 0px;">
-                    <a href="single_proramme.php?post-slug=<?php echo $post['slug']; ?>">
-                        <div class="post_info">
-                            <h3><?php echo $post['name'] ?></h3>
-                            <div class="info">
-                                <span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-                                <span class="read_more">Read more...</span>
+            <?php if (empty($courses)) : ?>
+                <p style="text-align: left; margin-top: 20px;">
+                    No <?php echo getCourseLevelTitleById($course_level_id); ?> courses added yet.
+                </p>
+            <?php else : ?>
+                <?php foreach ($courses as $post) : ?>
+                    <div class="post" style="margin-left: 0px;">
+                        <a href="single_programme.php?course-slug=<?php echo $post['slug']; ?>">
+                            <div class="post_info">
+                                <h3><?php echo $post['name'] ?></h3>
+                                <div class="info">
+                                    <span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
+                                    <span class="read_more">Read more...</span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endforeach ?>
+                        </a>
+                    </div>
+                <?php endforeach ?>
+            <?php endif ?>
         </div>
         <!-- // content -->
     </div>

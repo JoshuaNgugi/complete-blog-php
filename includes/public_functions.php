@@ -96,14 +96,8 @@ function getAllProgrammes() {
 	global $conn;
 	$sql = "SELECT * FROM courses WHERE course_level_id != 4";
 	$result = mysqli_query($conn, $sql);
-	// fetch all courses as an associative array called $posts
+	// fetch all courses as an associative array called $courses
 	$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-	$final_courses = array();
-	foreach ($courses as $course) {
-		$post['name'] = getPostTopic($course['id']); 
-		array_push($final_courses, $post);
-	}
 	return $courses;
 }
 
@@ -168,11 +162,8 @@ function getTop5Courses() {
 * * * * * * * * * * * * * * * * */
 function getCoursesByCourseLevel($course_level_id) {
 	global $conn;
-	$sql = "SELECT * FROM courses cs 
-			WHERE cs.id IN 
-			(SELECT cd.course_id FROM course_details cd 
-				WHERE cd.course_level_id=$course_level_id GROUP BY cd.course_level_id
-				HAVING COUNT(1) = 1)";
+	$sql = "SELECT * FROM courses WHERE course_level_id =  $course_level_id";
+
 	$result = mysqli_query($conn, $sql);
 	// fetch all posts as an associative array called $posts
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -210,8 +201,8 @@ function getPublishedActivities() {
 	global $conn;
 	$sql = "SELECT * FROM current_activities WHERE is_published=true";
 	$result = mysqli_query($conn, $sql);
-	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $posts;
+	$activities = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $activities;
 }
 
 function getBootCamps() {

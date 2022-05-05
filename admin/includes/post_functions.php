@@ -355,7 +355,7 @@ function createActivity($request_values)
         $published = esc($request_values['publish']);
     }
     // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
-    $post_slug = makeSlug($title);
+    $activity_slug = makeSlug($title);
     // validate form
     if (empty($title)) {
         array_push($errors, "Activity title is required");
@@ -373,17 +373,17 @@ function createActivity($request_values)
     if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
         array_push($errors, "Failed to upload image. Please check file settings for your server");
     }
-    // Ensure that no post is saved twice. 
-    $post_check_query = "SELECT * FROM current_activities WHERE slug='$post_slug' LIMIT 1";
-    $result = mysqli_query($conn, $post_check_query);
+    // Ensure that no activity is saved twice. 
+    $activity_check_query = "SELECT * FROM current_activities WHERE slug='$activity_slug' LIMIT 1";
+    $result = mysqli_query($conn, $activity_check_query);
 
-    if (mysqli_num_rows($result) > 0) { // if post exists
+    if (mysqli_num_rows($result) > 0) { // if activity exists
         array_push($errors, "An activity already exists with that title.");
     }
-    // create post if there are no errors in the form
+    // create activity if there are no errors in the form
     if (count($errors) == 0) {
-        $query = "INSERT INTO current_activities (staff_id, title, slug, image, body, is_published) VALUES(1, '$title', '$post_slug', '$featured_image', '$body', $published)";
-        if (mysqli_query($conn, $query)) { // if post created successfully
+        $query = "INSERT INTO current_activities (staff_id, title, slug, image, body, is_published) VALUES(1, '$title', '$activity_slug', '$featured_image', '$body', $published)";
+        if (mysqli_query($conn, $query)) { // if activity created successfully
 
             $_SESSION['message'] = "Activity created successfully";
             header('location: activities.php');

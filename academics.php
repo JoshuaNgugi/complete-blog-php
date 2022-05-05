@@ -14,7 +14,7 @@ $boot_camps = getBootCamps();
     <!-- // navbar -->
 
     <!-- Single News Start-->
-    <div class="single-news">
+    <div class="single-news" style="font-family: 'Averia Serif Libre', cursive;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">

@@ -11,7 +11,7 @@ $bank_details = getBankDetails();
 <body>
     <?php include(ROOT_PATH . '/includes/navbar.php') ?>
 
-    <div class="staff-bar">
+    <div class="staff-bar" style="font-family: 'Averia Serif Libre', cursive;">
         <h2>Bank Account Details</h2>
         <table class="table table-hover table-striped">
             <tr>
