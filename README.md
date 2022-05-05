@@ -134,7 +134,7 @@ function getPublishedActivities() {
 }
 ```
 
-#### Creating an activitiy
+##### Creating an activitiy
 The code below is located in `post_functions.php` and retrieves data from the form in `create_activity.php` validates it and then inserts it into the `current_activities` table.
 
 ```
@@ -185,7 +185,7 @@ function createActivity($request_values)
 }
 ```
 
-#### Update activity
+##### Update activity
 For updating an activity we listen to an `update_activity` POST request
 ```
 if (isset($_POST['update_activity'])) {
@@ -206,6 +206,8 @@ This is triggered whenever we want to make an update to an activity in `create_a
 Once the update is triggered `updateActivity($request_values)` runs the code to update an activity.
 
 #### Programmes
+![programmes](https://user-images.githubusercontent.com/19873411/166968359-67025619-396c-4b00-a2b1-be9402b8b7ce.PNG)
+
 The programmes are listed using the html code below
 ```
 <table class="table table-hover table-striped">
@@ -223,6 +225,7 @@ The programmes are listed using the html code below
 	<?php endforeach ?>
 </table>
 ```
+
 The PHP code that retrieves the programmes is shown below. Notice we select all courses apart from those whose course_level_id equals 4 because those ones are boot camps and other courses offered by the department.
 ```
 function getAllProgrammes() {
