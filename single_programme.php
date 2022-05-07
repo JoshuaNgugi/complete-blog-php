@@ -13,7 +13,7 @@ $course_levels = getAllCourseLevels();
 
     <?php include(ROOT_PATH . '/includes/navbar.php'); ?>
     <div class="container">
-        <div class="content">
+        <div class="content" style="font-family: 'Averia Serif Libre', cursive;">
             <!-- Page wrapper -->
             <div class="post-wrapper">
                 <div class="full-post-div">

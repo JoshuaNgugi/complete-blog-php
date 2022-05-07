@@ -3,7 +3,7 @@
     <div class="container">
         <div>
             <img src="<?php echo BASE_URL . 'static/images/jkuat-logo.png'; ?>" alt="Jkuat logo" width="50" height="50" style="float: left; margin-right:10px;" />
-            <a class="navbar-brand text-white" href="<?php echo BASE_URL; ?>">JKUAT School of Computing</a>
+            <a class="navbar-brand text-white" href="<?php echo BASE_URL; ?>" style="font-family: 'Averia Serif Libre', cursive; font-size: 2.1em;">JKUAT School of Computing</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">

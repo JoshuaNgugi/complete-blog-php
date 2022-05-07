@@ -110,10 +110,6 @@ function getCourseBySlug($slug){
 
 	// fetch query results as associative array.
 	$post = mysqli_fetch_assoc($result);
-	// if ($post) {
-	// 	// get the topic to which this post belongs
-	// 	$post['topic'] = getPostTopic($post['id']);
-	// }
 	return $post;
 }
 
@@ -223,5 +219,17 @@ function getBankDetails()
 	$result = mysqli_query($conn, $sql);
 	$bank_details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $bank_details;
+}
+
+function getActivityBySlug($slug){
+	global $conn;
+	// Get single post slug
+	$activity_slug = $_GET['activity-slug'];
+	$sql = "SELECT * FROM current_activities WHERE slug='$activity_slug'";
+	$result = mysqli_query($conn, $sql);
+
+	// fetch query results as associative array.
+	$activity = mysqli_fetch_assoc($result);
+	return $activity;
 }
 ?>
