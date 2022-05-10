@@ -21,10 +21,10 @@
                     <a class="nav-link" href="<?php echo BASE_URL . 'programmes.php'; ?>"><i class="fa fa-th-list fa-fw mr-1"></i>Programmes</a>
                 </li>
                 <li class="nav-item pl-1">
-                    <a class="nav-link" href="<?php echo BASE_URL . 'payment.php'; ?>"><i class="fa fa-phone fa-fw fa-rotate-180 mr-1"></i>Payment</a>
+                    <a class="nav-link" href="<?php echo BASE_URL . 'payment.php'; ?>"><i class="fa fa-money fa-fw mr-1"></i>Payment</a>
                 </li>
                 <li class="nav-item pl-1">
-                    <a class="nav-link" href="<?php echo BASE_URL . 'login.php'; ?>"><i class="fa fa-login fa-fw mr-1"></i>Login</a>
+                    <a class="nav-link" href="<?php echo BASE_URL . 'login.php'; ?>"><i class="fa fa-lock fa-fw mr-1"></i>Login</a>
                 </li>
                 <li class="nav-item pl-1">
                     <a class="nav-link" href="<?php echo BASE_URL . 'register.php'; ?>"><i class="fa fa-sign-in fa-fw mr-1"></i>Register</a>
