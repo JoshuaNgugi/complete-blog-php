@@ -76,6 +76,10 @@ if (isset($_POST['create_course'])) {
     createCourse($_POST);
 }
 
+if (isset($_POST['update_course'])) {
+    updateCourse($_POST);
+}
+
 if (isset($_GET['edit-course'])) {
     $isEditingPost = true;
     $course_id = $_GET['edit-course'];
@@ -301,6 +305,8 @@ function createCourse($request_values)
         array_push($errors, "Course Level is required");
     }
 
+    $coourse_slug = makeSlug($title);
+
     // Ensure that no post is saved twice. 
     $post_check_query = "SELECT * FROM courses WHERE name='$title' LIMIT 1";
     $result = mysqli_query($conn, $post_check_query);
@@ -310,7 +316,7 @@ function createCourse($request_values)
     }
     // create post if there are no errors in the form
     if (count($errors) == 0) {
-        $query = "INSERT INTO courses (name, description, user_id, course_level_id) VALUES('$title', '$body', $director_id, $course_level_id)";
+        $query = "INSERT INTO courses (name, description, user_id, course_level_id, slug) VALUES('$title', '$body', $director_id, $course_level_id, '$coourse_slug')";
         if (mysqli_query($conn, $query)) { // if post created successfully
             $inserted_course_id = mysqli_insert_id($conn);
             // create relationship between post and topic
@@ -320,6 +326,51 @@ function createCourse($request_values)
             $_SESSION['message'] = "Course created successfully";
             header('location: course.php');
             exit(0);
+        }
+    }
+}
+
+function updateCourse($request_values)
+{
+    global $conn, $errors, $title, $director_id, $course_level_id, $body;
+
+    $title = esc($request_values['title']);
+    $body = esc($request_values['body']);
+    $course_id = esc($request_values['course_id']);
+    if (isset($request_values['director_id'])) {
+        $director_id = esc($request_values['director_id']);
+    }
+    if (isset($request_values['course_level_id'])) {
+        $course_level_id = esc($request_values['course_level_id']);
+    }
+    // validate form
+    if (empty($title)) {
+        array_push($errors, "Course title is required");
+    }
+    if (empty($body)) {
+        array_push($errors, "Course description is required");
+    }
+    if (empty($director_id)) {
+        array_push($errors, "Course Director is required");
+    }
+
+    if (empty($course_level_id)) {
+        array_push($errors, "Course Level is required");
+    }
+    // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+    $course_slug = makeSlug($title);
+
+    // register topic if there are no errors in the form
+    if (count($errors) == 0) {
+        $query = "UPDATE courses SET name='$title', slug='$course_slug', description='$body', user_id=$director_id, course_level_id=$course_level_id, updated_at=now() WHERE id=$course_id";
+        // attach topic to post on post_topic table
+        if (mysqli_query($conn, $query)) { // if post created successfully
+            
+        $_SESSION['message'] = "Course updated successfully";
+        header('location: course.php');
+        exit(0);
+        } else {
+            $_SESSION['message'] = "Unable to update course. Something went wrong.";
         }
     }
 }

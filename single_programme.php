@@ -25,7 +25,11 @@ $course_levels = getAllCourseLevels();
                                 No details for <?php echo $course['name']; ?> added yet. Please contact the school administration for information.
                             </p>
                         <?php else : ?>
-                            <?php echo html_entity_decode($course['description']); ?>
+                            <div style="font-family: 'Averia Serif Libre', cursive;">
+
+                                <?php echo html_entity_decode($course['description']); ?>
+
+                            </div>
                         <?php endif ?>
                     </div>
                     <?php ?>
