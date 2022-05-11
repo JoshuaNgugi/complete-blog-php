@@ -18,10 +18,13 @@
                     <a class="nav-link" href="<?php echo BASE_URL . 'academics.php'; ?>"><i class="fa fa-graduation-cap fa-fw mr-1"></i>Academics</a>
                 </li>
                 <li class="nav-item pl-1">
-                    <a class="nav-link" href="<?php echo BASE_URL . 'programmes.php'; ?>"><i class="fa fa-th-list fa-fw mr-1"></i>Programmes</a>
+                    <a class="nav-link" href="<?php echo BASE_URL . 'programmes.php'; ?>"><i class="fa fa-bars fa-fw mr-1"></i>Programmes</a>
                 </li>
                 <li class="nav-item pl-1">
                     <a class="nav-link" href="<?php echo BASE_URL . 'payment.php'; ?>"><i class="fa fa-money fa-fw mr-1"></i>Payment</a>
+                </li>
+                <li class="nav-item pl-1">
+                    <a class="nav-link" href="<?php echo BASE_URL . 'staff.php'; ?>"><i class="fa fa-user-circle fa-fw mr-1"></i>Staff</a>
                 </li>
                 <li class="nav-item pl-1">
                     <a class="nav-link" href="<?php echo BASE_URL . 'login.php'; ?>"><i class="fa fa-lock fa-fw mr-1"></i>Login</a>
