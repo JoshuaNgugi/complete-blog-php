@@ -1,11 +1,51 @@
-# ICS 3114 WEB TECHNOLOGY PROJECT
+# ICS 3114 WEB TECHNOLOGY PROJECT DOCUMENTATION
 ## Assignement (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
+![oldman co ke](https://user-images.githubusercontent.com/19873411/167809233-7f481077-a5aa-4f24-b3c6-46ae01a1cff8.JPG)
+
+### Functional and Non-functional Requirements
+#### Functional Requirements
+1. The website should contain the following pages:
+	* Home Page
+	* Academics
+	* Payment methods
+	* Programmes
+	* Login
+	* Staff
+	* Apply now
+2. Every page must contain a logo, menu bar and a footer.
+3. The home page should provide information about the current activities of the school, how to apply link with a link to Apply Now, message from the director etc.
+4. The academics page should contain information regarding various academic activities including and not limited to boot camps, cisco
+academies and related information as well as microsoft related course that students undertake to enrich the programmes that they are taking.
+5. Payment methods should consider direct payment to the university or payment via mpesa only. In this case only direct payments were implemented.
+6. Programmes should enlist the various programmes of the department and the school at large.
+7. The back end should allow the webadministrator to and information related to the area that need update with good forms.
+8. The site should be database driven.
+
+#### Non-functional Requirements
+1. Security - the system should be secure in that unauthorized users should not be able to access it or should be authenticated properly before accessing it.
+2. Reliability - the website should be up 24/7 to allow users to access it anytime they wish.
+3. Maintainabilty - the site should be continualy updated and maintained in order to deal with any bugs and add any new requirement that might arise.
+4. Usablility - the site should be user friendly and easy to use.
+
+### Definition of Users
+1. Web-admin - this is the person responsible for accessing the web admin portal and uploading information to the website.
+2. Staff - these are the school staff who are listed under the staff page and employees of the university.
+3. Student - these are the users who access the website to access the various information that they require about the school
+
+### Tools used
+The website was developed using [Visual Studio Code](https://code.visualstudio.com/) and the backend which included the server and database [XAMPP](https://www.apachefriends.org/download.html). XAMPP provides an Apache Server and MySQL database locally.
+The site is hosted using a domain purchased via [Truehost](https://truehost.co.ke/). The webisite files were uploaded to Truehost cpanel using [FileZilla](https://filezilla-project.org/download.php?platform=win64).
+[GitHub](https://github.com/) was used for hosting the code and [Git](https://git-scm.com/) for version control.
+This was developed using a HP-envy laptop.
+
+## Database
+### Entity Relationship Diagram
 The following shows the entity relationship diagram used for the above website
 ![web-erd](https://user-images.githubusercontent.com/19873411/166811014-f35b363c-1033-4822-b260-dbe11ac934db.PNG)
 
-Please note the admin credentials to log into the admin dashboard are indicated in the file uploaded on sodel4.
+Please note the admin credentials to log into the admin dashboard are indicated in the file uploaded on [sodel4](https://sodel4.jkuat.ac.ke/).
 
 #### Staff Table
 
@@ -95,6 +135,7 @@ CREATE TABLE current_activities (
 );
 ```
 
+## Code
 ##### Retrieving current activities
 The following section covers the backend code of the system.
 
