@@ -1,7 +1,35 @@
-# ICS 3114 WEB TECHNOLOGY PROJECT
+# ICS 3114 WEB TECHNOLOGY PROJECT DOCUMENTATION
 ## Assignement (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
+### Functional and Non-functional Requirements
+#### Functional Requirements
+1. The website should contain the following pages:
+	* Home Page
+	* Academics
+	* Payment methods
+	* Programmes
+	* Login
+	* Staff
+	* Apply now
+2. Every page must contain a logo, menu bar and a footer.
+3. The home page should provide information about the current activities of the school, how to apply link with a link to Apply Now, message from the director etc.
+4. The academics page should contain information regarding various academic activities including and not limited to boot camps, cisco
+academies and related information as well as microsoft related course that students undertake to enrich the programmes that they are taking.
+5. Payment methods should consider direct payment to the university or payment via mpesa only. In this case only direct payments were implemented.
+6. Programmes should enlist the various programmes of the department and the school at large.
+7. The back end should allow the webadministrator to and information related to the area that need update with good forms.
+8. The site should be database driven.
+
+#### Non-functional Requirements
+1. Security - the system should be secure in that unauthorized users should not be able to access it or should be authenticated properly before accessing it.
+2. Reliability - the website should be up 24/7 to allow users to access it anytime they wish.
+3. Maintainabilty - the site should be continualy updated and maintained in order to deal with any bugs and add any new requirement that might arise.
+4. Usablility - the site should be user friendly and easy to use.
+
+
+## Database
+### Entity Relationship Diagram
 The following shows the entity relationship diagram used for the above website
 ![web-erd](https://user-images.githubusercontent.com/19873411/166811014-f35b363c-1033-4822-b260-dbe11ac934db.PNG)
 
@@ -95,6 +123,7 @@ CREATE TABLE current_activities (
 );
 ```
 
+## Code
 ##### Retrieving current activities
 The following section covers the backend code of the system.
 
