@@ -2,6 +2,8 @@
 ## Assignement (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
+![oldman co ke](https://user-images.githubusercontent.com/19873411/167809233-7f481077-a5aa-4f24-b3c6-46ae01a1cff8.JPG)
+
 ### Functional and Non-functional Requirements
 #### Functional Requirements
 1. The website should contain the following pages:
@@ -27,6 +29,16 @@ academies and related information as well as microsoft related course that stude
 3. Maintainabilty - the site should be continualy updated and maintained in order to deal with any bugs and add any new requirement that might arise.
 4. Usablility - the site should be user friendly and easy to use.
 
+### Definition of Users
+1. Web-admin - this is the person responsible for accessing the web admin portal and uploading information to the website.
+2. Staff - these are the school staff who are listed under the staff page and employees of the university.
+3. Student - these are the users who access the website to access the various information that they require about the school
+
+### Tools used
+The website was developed using [Visual Studio Code](https://code.visualstudio.com/) and the backend which included the server and database [XAMPP](https://www.apachefriends.org/download.html). XAMPP provides an Apache Server and MySQL database locally.
+The site is hosted using a domain purchased via [Truehost](https://truehost.co.ke/). The webisite files were uploaded to Truehost cpanel using [FileZilla](https://filezilla-project.org/download.php?platform=win64).
+[GitHub](https://github.com/) was used for hosting the code and [Git](https://git-scm.com/) for version control.
+This was developed using a HP-envy laptop.
 
 ## Database
 ### Entity Relationship Diagram
