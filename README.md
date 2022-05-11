@@ -45,7 +45,7 @@ This was developed using a HP-envy laptop.
 The following shows the entity relationship diagram used for the above website
 ![web-erd](https://user-images.githubusercontent.com/19873411/166811014-f35b363c-1033-4822-b260-dbe11ac934db.PNG)
 
-Please note the admin credentials to log into the admin dashboard are indicated in the file uploaded on sodel4.
+Please note the admin credentials to log into the admin dashboard are indicated in the file uploaded on [sodel4](https://sodel4.jkuat.ac.ke/).
 
 #### Staff Table
 
