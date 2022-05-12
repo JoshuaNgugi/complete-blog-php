@@ -2,7 +2,30 @@
 ## Assignement (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
+##### Home Page
 ![web-potrait](https://user-images.githubusercontent.com/19873411/168120661-2d5559e2-d765-4ca9-9078-b8d3781107f7.PNG)
+
+
+
+##### Academics Page
+![academics](https://user-images.githubusercontent.com/19873411/168123332-765aaf13-2559-4b17-bd41-d982d9d33d51.PNG)
+
+
+
+#### Payment Page
+![payment](https://user-images.githubusercontent.com/19873411/168123386-f5fee698-e535-4b29-b7f4-05da72712af2.PNG)
+
+
+
+#### Programmes Page
+![programmes](https://user-images.githubusercontent.com/19873411/168123484-66d006da-08c7-4fed-afaf-a90dfa9b0163.PNG)
+
+
+
+#### Admin Dashboard Landing Page
+![admin](https://user-images.githubusercontent.com/19873411/168123582-8ae37437-92a8-4077-a99c-4ce8a913cd70.PNG)
+
+
 
 ### Functional and Non-functional Requirements
 #### Functional Requirements
