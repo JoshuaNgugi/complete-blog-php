@@ -1,5 +1,5 @@
 # ICS 3114 WEB TECHNOLOGY PROJECT DOCUMENTATION
-## Assignement (Website for School of Computing and Information Technology)
+## Assignment (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
 ##### Home Page
