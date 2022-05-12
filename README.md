@@ -2,7 +2,7 @@
 ## Assignement (Website for School of Computing and Information Technology)
 Website: [Here](http://oldman.co.ke/)
 
-![oldman co ke](https://user-images.githubusercontent.com/19873411/167809233-7f481077-a5aa-4f24-b3c6-46ae01a1cff8.JPG)
+![web-potrait](https://user-images.githubusercontent.com/19873411/168120661-2d5559e2-d765-4ca9-9078-b8d3781107f7.PNG)
 
 ### Functional and Non-functional Requirements
 #### Functional Requirements
@@ -33,6 +33,9 @@ academies and related information as well as microsoft related course that stude
 1. Web-admin - this is the person responsible for accessing the web admin portal and uploading information to the website.
 2. Staff - these are the school staff who are listed under the staff page and employees of the university.
 3. Student - these are the users who access the website to access the various information that they require about the school
+
+### Use Case Diagram
+![web-use](https://user-images.githubusercontent.com/19873411/168119797-58f09ba6-2de3-4add-a8c4-a8e5d29a0a81.PNG)
 
 ### Tools used
 The website was developed using [Visual Studio Code](https://code.visualstudio.com/) and the backend which included the server and database [XAMPP](https://www.apachefriends.org/download.html). XAMPP provides an Apache Server and MySQL database locally.
